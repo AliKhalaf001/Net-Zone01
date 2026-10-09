@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Net Zone - باقات الإنترنت والاتصالات المتكاملة</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Tajawal -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- إعدادات Tailwind المخصصة -->
     <script>
         tailwind.config = {
             theme: {
@@ -32,20 +39,23 @@
                         'neon-emerald': '0 0 25px rgba(16, 185, 129, 0.35)',
                         'neon-blue': '0 0 25px rgba(59, 130, 246, 0.35)',
                         'neon-cyan': '0 0 30px rgba(0, 240, 255, 0.4)',
+                        'neon-group': '0 0 30px rgba(34, 197, 94, 0.5)',
                     }
                 }
             }
         }
     </script>
+
+    <!-- تنسيقات CSS مخصصة ومفعلة للأداء -->
     <style>
         body {
             font-family: 'Tajawal', sans-serif;
             background-color: #080C14;
             color: #F3F4F6;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Circuit Background Effect */
         .cyber-bg {
             background-image: 
                 radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.08) 0%, transparent 50%),
@@ -55,11 +65,10 @@
             background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
         }
 
-        /* Glassmorphic Cards */
         .glass-card {
-            background: rgba(15, 23, 42, 0.65);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -67,16 +76,14 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Glowing Pulse Animation */
         @keyframes pulseGlow {
             0%, 100% { opacity: 0.6; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.05); }
+            50% { opacity: 1; transform: scale(1.02); }
         }
         .animate-pulse-glow {
             animation: pulseGlow 3s infinite ease-in-out;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -87,31 +94,27 @@
             background: #1E293B;
             border-radius: 4px;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #334155;
-        }
     </style>
 </head>
+
 <body class="cyber-bg min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
 
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-40 border-b border-gray-800/80 glass-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
             <a href="#" class="flex items-center gap-3 group">
                 <div class="relative w-11 h-11 flex items-center justify-center bg-gradient-to-br from-cyan-500/20 to-blue-600/20 rounded-xl border border-cyan-500/40 group-hover:border-cyan-400 transition-all duration-300 shadow-neon-cyan/50">
                     <i class="fa-solid font-bold fa-cube text-2xl text-cyan-400 group-hover:rotate-12 transition-transform duration-300"></i>
                     <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-cyan-400 rounded-full animate-ping"></span>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-2xl font-black tracking-wider text-white flex items-center gap-1">
-                        NET <span class="text-cyan-400">ZONE</span>
+                    <span class="text-2xl font-black tracking-wider text-white flex items-center gap-1" dir="ltr">
+                        <span>NET</span> <span class="text-cyan-400">ZONE</span>
                     </span>
                     <span class="text-[10px] text-gray-400 tracking-widest uppercase">الاتصالات والإنترنت</span>
                 </div>
             </a>
 
-            <!-- Navigation Links -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
                 <a href="#hero" class="text-gray-300 hover:text-cyan-400 transition-colors">الرئيسية</a>
                 <a href="#packages" class="text-gray-300 hover:text-cyan-400 transition-colors">الباقات المتاحة</a>
@@ -119,11 +122,16 @@
                 <a href="#contact" class="text-gray-300 hover:text-cyan-400 transition-colors">تواصل معنا</a>
             </nav>
 
-            <!-- Quick Action Button -->
-            <a href="#packages" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all duration-300 transform hover:-translate-y-0.5">
-                <span>اختر باقتك</span>
-                <i class="fa-solid fa-arrow-left"></i>
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="https://chat.whatsapp.com/GW2MZGbdLjzDkOcMT8SYFu" target="_blank" rel="noopener" class="hidden lg:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 font-bold text-xs transition-all duration-300">
+                    <i class="fa-solid fa-users text-sm"></i>
+                    <span>جروب العروض</span>
+                </a>
+                <a href="#packages" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm shadow-lg shadow-cyan-500/20 transition-all duration-300">
+                    <span>اختر باقتك</span>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+            </div>
         </div>
     </header>
 
@@ -131,30 +139,28 @@
     <section id="hero" class="relative py-16 lg:py-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="text-center max-w-3xl mx-auto space-y-6">
-                <!-- Top Badge -->
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-semibold tracking-wide">
-                    <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                    <span>شراكة متكاملة مع etisalat and EMERALD</span>
-                </div>
-
-                <!-- Main Heading -->
+                
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
                     عالم السرعة الفائقة بين يديك مع <span class="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Net Zone</span>
                 </h1>
 
-                <!-- Subtitle -->
                 <p class="text-gray-300 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-light">
                     اختر الباقة المناسبة لاحتياجاتك واستمتع بأعلى سرعات الإنترنت وأفضل المزايا المتكاملة من دقائق ومكالمات دولية ورسائل لكل الشبكات.
                 </p>
 
-                <!-- Action Buttons -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs sm:text-sm font-semibold shadow-inner">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>نظام الأمان والشفافية: يتم تفعيل الباقة أولاً على خطك ثم تقوم بالدفع بعد التفعيل</span>
+                </div>
+
                 <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
-                    <a href="#packages" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:opacity-95 text-white font-bold text-base shadow-lg shadow-cyan-500/25 transition-all duration-300 transform hover:-translate-y-1">
+                    <a href="#packages" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:opacity-95 text-white font-bold text-base shadow-lg shadow-cyan-500/25 transition-all duration-300">
                         تصفح الباقات الآن
                     </a>
-                    <a href="https://wa.me/201140877868?text=مرحباً%20Net%20Zone،%20أريد%20الاستفسار%20عن%20الباقات" target="_blank" class="px-8 py-3.5 rounded-xl glass-card text-white hover:bg-white/10 font-bold text-base border border-gray-700 transition-all duration-300 flex items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i>
-                        <span>تواصل معنا مباشر</span>
+
+                    <a href="https://chat.whatsapp.com/GW2MZGbdLjzDkOcMT8SYFu" target="_blank" rel="noopener" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-black text-base shadow-neon-group transition-all duration-300 flex items-center gap-2.5 border border-emerald-400/50">
+                        <i class="fa-solid fa-users text-xl text-emerald-200"></i>
+                        <span>الانضمام لمجموعة العروض والباقات</span>
                     </a>
                 </div>
             </div>
@@ -164,223 +170,23 @@
     <!-- Packages Section -->
     <section id="packages" class="py-12 lg:py-20 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Title -->
-            <div class="text-center space-y-3 mb-16">
+            <div class="text-center space-y-3 mb-12">
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white">باقات الإنترنت والمكالمات</h2>
                 <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
                     باقات متنوعة تناسب كافة الاستخدامات اليومية والشخصية بأفضل قيمة وأعلى كفاءة.
                 </p>
             </div>
 
-            <!-- Packages Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-
-                <!-- CARD 1: 18 GB -->
-                <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-purple border-t-4 border-purple-500">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40">باقة 18 جيجا</span>
-                            <i class="fa-solid fa-wifi text-purple-400 text-xl"></i>
-                        </div>
-
-                        <div class="text-center py-4 border-b border-gray-800">
-                            <div class="text-4xl font-black text-white mb-1">18 <span class="text-lg font-normal text-gray-300">جيجا</span></div>
-                            <div class="text-2xl font-bold text-purple-400">300 <span class="text-sm font-normal text-gray-400">ج.م / شهرياً</span></div>
-                        </div>
-
-                        <div class="my-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-center bg-purple-950/40 py-1.5 rounded-lg border border-purple-500/20">
-                            مزايا متكاملة
-                        </div>
-
-                        <ul class="space-y-3 text-sm text-gray-300 mb-6">
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-phone text-purple-400 text-xs"></i>
-                                    <span>الدقائق المحلية:</span>
-                                </span>
-                                <span class="font-bold text-white">1000 دقيقة</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-comment-dots text-purple-400 text-xs"></i>
-                                    <span>الرسائل:</span>
-                                </span>
-                                <span class="font-bold text-white">50 رسالة (لكل الشبكات)</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-globe text-purple-400 text-xs"></i>
-                                    <span>الدقائق الدولية:</span>
-                                </span>
-                                <span class="font-bold text-white">10 دقائق</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button onclick="openModal('18 جيجا', '300 ج.م')" class="w-full py-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold transition-colors duration-200 shadow-md flex items-center justify-center gap-2">
-                        <span>اشترك الآن</span>
-                        <i class="fa-solid fa-bolt text-xs"></i>
-                    </button>
-                </div>
-
-                <!-- CARD 2: 25 GB -->
-                <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-orange border-t-4 border-amber-500">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">باقة 25 جيجا</span>
-                            <i class="fa-solid fa-chart-line text-amber-400 text-xl"></i>
-                        </div>
-
-                        <div class="text-center py-4 border-b border-gray-800">
-                            <div class="text-4xl font-black text-white mb-1">25 <span class="text-lg font-normal text-gray-300">جيجا</span></div>
-                            <div class="text-2xl font-bold text-amber-400">370 <span class="text-sm font-normal text-gray-400">ج.م / شهرياً</span></div>
-                        </div>
-
-                        <div class="my-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-center bg-amber-950/40 py-1.5 rounded-lg border border-amber-500/20">
-                            مزايا متكاملة
-                        </div>
-
-                        <ul class="space-y-3 text-sm text-gray-300 mb-6">
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-phone text-amber-400 text-xs"></i>
-                                    <span>الدقائق المحلية:</span>
-                                </span>
-                                <span class="font-bold text-white">1000 دقيقة</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-comment-dots text-amber-400 text-xs"></i>
-                                    <span>الرسائل:</span>
-                                </span>
-                                <span class="font-bold text-white">50 رسالة (لكل الشبكات)</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-globe text-amber-400 text-xs"></i>
-                                    <span>الدقائق الدولية:</span>
-                                </span>
-                                <span class="font-bold text-white">10 دقائق</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button onclick="openModal('25 جيجا', '370 ج.م')" class="w-full py-3 rounded-xl bg-amber-600 hover:bg-amber-500 text-white font-bold transition-colors duration-200 shadow-md flex items-center justify-center gap-2">
-                        <span>اشترك الآن</span>
-                        <i class="fa-solid fa-bolt text-xs"></i>
-                    </button>
-                </div>
-
-                <!-- CARD 3: 40 GB -->
-                <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-emerald border-t-4 border-emerald-500">
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">باقة 40 جيجا</span>
-                            <i class="fa-solid fa-gauge-high text-emerald-400 text-xl"></i>
-                        </div>
-
-                        <div class="text-center py-4 border-b border-gray-800">
-                            <div class="text-4xl font-black text-white mb-1">40 <span class="text-lg font-normal text-gray-300">جيجا</span></div>
-                            <div class="text-2xl font-bold text-emerald-400">480 <span class="text-sm font-normal text-gray-400">ج.م / شهرياً</span></div>
-                        </div>
-
-                        <div class="my-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-center bg-emerald-950/40 py-1.5 rounded-lg border border-emerald-500/20">
-                            مزايا متكاملة
-                        </div>
-
-                        <ul class="space-y-3 text-sm text-gray-300 mb-6">
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-phone text-emerald-400 text-xs"></i>
-                                    <span>الدقائق المحلية:</span>
-                                </span>
-                                <span class="font-bold text-white">1000 دقيقة</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-comment-dots text-emerald-400 text-xs"></i>
-                                    <span>الرسائل:</span>
-                                </span>
-                                <span class="font-bold text-white">50 رسالة (لكل الشبكات)</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-globe text-emerald-400 text-xs"></i>
-                                    <span>الدقائق الدولية:</span>
-                                </span>
-                                <span class="font-bold text-white">10 دقائق</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button onclick="openModal('40 جيجا', '480 ج.م')" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition-colors duration-200 shadow-md flex items-center justify-center gap-2">
-                        <span>اشترك الآن</span>
-                        <i class="fa-solid fa-bolt text-xs"></i>
-                    </button>
-                </div>
-
-                <!-- CARD 4: 50 GB -->
-                <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-blue border-2 border-blue-500 bg-gradient-to-b from-blue-950/30 to-slate-900/90 transform lg:-translate-y-3">
-                    <div class="absolute -top-3.5 right-1/2 translate-x-1/2 bg-gradient-to-r from-blue-500 to-cyan-400 text-slate-950 font-black text-[11px] px-3 py-0.5 rounded-full uppercase tracking-wider shadow-md">
-                        الأكثر طلباً 🔥
-                    </div>
-
-                    <div>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/40">باقة 50 جيجا</span>
-                            <i class="fa-solid fa-rocket text-blue-400 text-xl"></i>
-                        </div>
-
-                        <div class="text-center py-4 border-b border-gray-800">
-                            <div class="text-4xl font-black text-white mb-1">50 <span class="text-lg font-normal text-gray-300">جيجا</span></div>
-                            <div class="text-2xl font-bold text-blue-400">590 <span class="text-sm font-normal text-gray-400">ج.م / شهرياً</span></div>
-                        </div>
-
-                        <div class="my-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-center bg-blue-950/40 py-1.5 rounded-lg border border-blue-500/20">
-                            مزايا متكاملة
-                        </div>
-
-                        <ul class="space-y-3 text-sm text-gray-300 mb-6">
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-phone text-blue-400 text-xs"></i>
-                                    <span>الدقائق المحلية:</span>
-                                </span>
-                                <span class="font-bold text-white">1000 دقيقة</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-comment-dots text-blue-400 text-xs"></i>
-                                    <span>الرسائل:</span>
-                                </span>
-                                <span class="font-bold text-white">50 رسالة (لكل الشبكات)</span>
-                            </li>
-                            <li class="flex items-center justify-between">
-                                <span class="flex items-center gap-2">
-                                    <i class="fa-solid fa-globe text-blue-400 text-xs"></i>
-                                    <span>الدقائق الدولية:</span>
-                                </span>
-                                <span class="font-bold text-white">10 دقائق</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <button onclick="openModal('50 جيجا', '590 ج.م')" class="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold transition-all duration-200 shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2">
-                        <span>اشترك الآن</span>
-                        <i class="fa-solid fa-bolt text-xs"></i>
-                    </button>
-                </div>
-
-            </div>
+            <div id="packagesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
         </div>
     </section>
 
-    <!-- Features -->
+    <!-- Features Section -->
     <section id="features" class="py-16 bg-slate-900/40 border-y border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-cyan-400">
+                    <div class="p-3 bg-cyan-500/10 border border-cyan-500/30 rounded-xl text-cyan-400 shrink-0">
                         <i class="fa-solid fa-bolt-lightning text-2xl"></i>
                     </div>
                     <div>
@@ -390,21 +196,21 @@
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 bg-purple-500/10 border border-purple-500/30 rounded-xl text-purple-400">
-                        <i class="fa-solid fa-shield-halved text-2xl"></i>
+                    <div class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400 shrink-0">
+                        <i class="fa-solid fa-headset text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-1">دعم وتفعيل فوري</h3>
-                        <p class="text-sm text-gray-400">فريق متكامل لمساعدتك في اختيار الباقة وتفعيل خطك بكل سهولة وبدون تعقيد.</p>
+                        <h3 class="text-lg font-bold text-white mb-1">دعم متواصل</h3>
+                        <p class="text-sm text-gray-400">فريق خدمة العملاء متواجد دائماً للرد على كافة استفساراتكم وتفعيل طلباتكم بسرعة.</p>
                     </div>
                 </div>
 
                 <div class="glass-card p-6 rounded-2xl flex items-start gap-4">
-                    <div class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-emerald-400">
+                    <div class="p-3 bg-purple-500/10 border border-purple-500/30 rounded-xl text-purple-400 shrink-0">
                         <i class="fa-solid fa-gem text-2xl"></i>
                     </div>
                     <div>
-                        <h3 class="text-lg font-bold text-white mb-1">مزايا EMERALD المتكاملة</h3>
+                        <h3 class="text-lg font-bold text-white mb-1">مزايا متكاملة</h3>
                         <p class="text-sm text-gray-400">دقائق محلية، رسائل لجميع الشبكات ودقائق دولية مدمجة في باقة واحدة.</p>
                     </div>
                 </div>
@@ -414,8 +220,8 @@
 
     <!-- Modal Dialog -->
     <div id="subModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-        <div class="glass-card w-full max-w-md rounded-2xl p-6 border border-gray-700 relative shadow-2xl animate-pulse-glow">
-            <button onclick="closeModal()" class="absolute top-4 left-4 text-gray-400 hover:text-white transition-colors">
+        <div class="glass-card w-full max-w-md rounded-2xl p-6 border border-gray-700 relative shadow-2xl">
+            <button id="closeModalBtn" class="absolute top-4 left-4 text-gray-400 hover:text-white transition-colors cursor-pointer" aria-label="إغلاق">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
 
@@ -427,7 +233,7 @@
                 <p id="modalPackageName" class="text-cyan-400 font-semibold text-sm mt-1">باقة --</p>
             </div>
 
-            <form id="subscriptionForm" onsubmit="handleSubscription(event)" class="space-y-4">
+            <form id="subscriptionForm" onsubmit="return false;" class="space-y-4">
                 <input type="hidden" id="selectedPackageInput" name="package">
 
                 <div>
@@ -436,8 +242,22 @@
                 </div>
 
                 <div>
-                    <label class="block text-xs font-semibold text-gray-300 mb-1">رقم الهاتف</label>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">رقم الهاتف المراد تفعيل الباقة عليه</label>
                     <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX" pattern="[0-9]{11}" class="w-full bg-slate-900/90 border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors text-right" dir="ltr">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-300 mb-1">اختر رقم الواتساب للتواصل</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/80 border border-gray-700 hover:border-emerald-500/50 cursor-pointer text-xs text-gray-300">
+                            <input type="radio" name="targetPhoneRadio" value="201140877868" checked class="accent-emerald-500">
+                            <span>الخط الأول (01140877868)</span>
+                        </label>
+                        <label class="flex items-center gap-2 p-2.5 rounded-xl bg-slate-900/80 border border-gray-700 hover:border-emerald-500/50 cursor-pointer text-xs text-gray-300">
+                            <input type="radio" name="targetPhoneRadio" value="201140238183" class="accent-emerald-500">
+                            <span>الخط الثاني (01140238183)</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div>
@@ -445,10 +265,17 @@
                     <textarea id="custNotes" rows="2" placeholder="أي تفاصيل أخرى تريد إضافتها..." class="w-full bg-slate-900/90 border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
                 </div>
 
-                <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-black text-sm transition-all duration-300 shadow-lg shadow-cyan-500/20 flex items-center justify-center gap-2 cursor-pointer">
-                    <i class="fa-brands fa-whatsapp text-lg"></i>
-                    <span>تأكيد وإرسال عبر الواتساب</span>
-                </button>
+                <div class="pt-2 space-y-2">
+                    <button type="button" id="whatsappBtn" class="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        <span>إرسال طلب التفعيل عبر الواتساب</span>
+                    </button>
+
+                    <button type="button" id="gmailBtn" class="w-full py-3 rounded-xl bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-500 hover:to-rose-400 text-white font-bold text-sm transition-all duration-300 shadow-lg shadow-red-500/20 flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-brands fa-google text-lg"></i>
+                        <span>إرسال عبر البريد الإلكتروني</span>
+                    </button>
+                </div>
             </form>
         </div>
     </div>
@@ -456,23 +283,44 @@
     <!-- Contact & Footer -->
     <footer id="contact" class="bg-slate-950 border-t border-gray-800/80 py-10 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-            <div class="flex items-center justify-center gap-2">
-                <i class="fa-solid fa-cube text-cyan-400 text-xl"></i>
+            <div class="flex items-center justify-center gap-2" dir="ltr">
                 <span class="text-xl font-bold tracking-wider text-white">NET ZONE</span>
+                <i class="fa-solid fa-cube text-cyan-400 text-xl"></i>
             </div>
 
             <p class="text-sm text-gray-400 max-w-md mx-auto">
                 مزود خدمة الإنترنت والاتصالات المعتمد. نضمن لك دائماً السرعة والأمان والتغطية المتكاملة.
             </p>
 
-            <div class="flex justify-center items-center gap-4 pt-2">
-                <a href="#" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-cyan-400 hover:border-cyan-400 transition-colors">
-                    <i class="fa-brands fa-facebook-f"></i>
+            <div class="max-w-md mx-auto p-4 rounded-2xl bg-gradient-to-r from-emerald-950/60 to-teal-950/60 border border-emerald-500/30 flex items-center justify-between gap-4 text-right">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl border border-emerald-500/30">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white">جروب الواتساب الرسمي</h4>
+                        <p class="text-xs text-emerald-300/80">لمتابعة أحدث العروض والخصومات</p>
+                    </div>
+                </div>
+                <a href="https://chat.whatsapp.com/GW2MZGbdLjzDkOcMT8SYFu" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs transition-colors shrink-0">
+                    انضمام الآن
                 </a>
-                <a href="https://wa.me/201140877868" target="_blank" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-emerald-400 hover:border-emerald-400 transition-colors">
+            </div>
+
+            <div class="flex justify-center items-center gap-4 pt-2">
+                <a href="https://wa.me/201140877868" target="_blank" rel="noopener" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-emerald-400 hover:border-emerald-400 transition-colors" title="واتساب 1">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
-                <a href="tel:01140877868" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors">
+                <a href="https://wa.me/201140238183" target="_blank" rel="noopener" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-emerald-400 hover:border-emerald-400 transition-colors" title="واتساب 2">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://chat.whatsapp.com/GW2MZGbdLjzDkOcMT8SYFu" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/50 flex items-center justify-center text-emerald-400 hover:bg-emerald-500 hover:text-slate-950 transition-all shadow-neon-group" title="مجموعة الواتساب">
+                    <i class="fa-solid fa-users"></i>
+                </a>
+                <a href="mailto:alikhalf001@gmail.com" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-red-400 hover:border-red-400 transition-colors" title="البريد الإلكتروني">
+                    <i class="fa-brands fa-google"></i>
+                </a>
+                <a href="tel:01140238183" class="w-10 h-10 rounded-full glass-card flex items-center justify-center text-gray-300 hover:text-purple-400 hover:border-purple-400 transition-colors" title="اتصال مباشر">
                     <i class="fa-solid fa-phone"></i>
                 </a>
             </div>
@@ -483,57 +331,196 @@
         </div>
     </footer>
 
+    <!-- JavaScript التفاعلي -->
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
 
-        function openModal(packageName, packagePrice) {
+            const TARGET_EMAIL = "alikhalf001@gmail.com";
+
+            const packages = [
+                {
+                    name: '18 جيجا',
+                    price: '300 ج.م',
+                    color: 'purple',
+                    icon: 'fa-wifi',
+                    borderClass: 'border-t-4 border-purple-500',
+                    hoverShadow: 'hover:shadow-neon-purple',
+                    badgeBg: 'bg-purple-500/20 text-purple-300 border-purple-500/40',
+                    priceColor: 'text-purple-400',
+                    btnBg: 'bg-purple-600 hover:bg-purple-500',
+                    isPopular: false
+                },
+                {
+                    name: '25 جيجا',
+                    price: '370 ج.م',
+                    color: 'amber',
+                    icon: 'fa-chart-line',
+                    borderClass: 'border-t-4 border-amber-500',
+                    hoverShadow: 'hover:shadow-neon-orange',
+                    badgeBg: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
+                    priceColor: 'text-amber-400',
+                    btnBg: 'bg-amber-600 hover:bg-amber-500',
+                    isPopular: false
+                },
+                {
+                    name: '40 جيجا',
+                    price: '480 ج.م',
+                    color: 'emerald',
+                    icon: 'fa-gauge-high',
+                    borderClass: 'border-2 border-emerald-400 bg-gradient-to-b from-emerald-950/40 to-slate-900/90 transform lg:-translate-y-3',
+                    hoverShadow: 'hover:shadow-neon-emerald',
+                    badgeBg: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
+                    priceColor: 'text-emerald-400',
+                    btnBg: 'bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 shadow-lg shadow-emerald-500/30',
+                    isPopular: true
+                },
+                {
+                    name: '50 جيجا',
+                    price: '590 ج.م',
+                    color: 'blue',
+                    icon: 'fa-rocket',
+                    borderClass: 'border-t-4 border-blue-500',
+                    hoverShadow: 'hover:shadow-neon-blue',
+                    badgeBg: 'bg-blue-500/20 text-blue-300 border-blue-500/40',
+                    priceColor: 'text-blue-400',
+                    btnBg: 'bg-blue-600 hover:bg-blue-500',
+                    isPopular: false
+                }
+            ];
+
+            const container = document.getElementById('packagesContainer');
+            container.innerHTML = packages.map(pkg => `
+                <div class="glass-card rounded-2xl p-6 relative flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 ${pkg.hoverShadow} ${pkg.borderClass}">
+                    ${pkg.isPopular ? `
+                        <div class="absolute -top-5 right-1/2 translate-x-1/2 bg-gradient-to-r from-emerald-400 via-teal-300 to-emerald-400 text-slate-950 font-black text-sm sm:text-base px-6 py-1 rounded-full uppercase tracking-wider shadow-lg shadow-emerald-500/50 border border-white/50 whitespace-nowrap">
+                            🔥 الأكثر طلباً 🔥
+                        </div>
+                    ` : ''}
+                    <div>
+                        <div class="flex items-center justify-between mb-4 ${pkg.isPopular ? 'mt-2' : ''}">
+                            <span class="text-xs font-bold px-3 py-1 rounded-full border ${pkg.badgeBg}">باقة ${pkg.name}</span>
+                            <i class="fa-solid ${pkg.icon} ${pkg.priceColor} text-xl"></i>
+                        </div>
+                        <div class="text-center py-4 border-b border-gray-800">
+                            <div class="text-4xl font-black text-white mb-1">${pkg.name.split(' ')[0]} <span class="text-lg font-normal text-gray-300">جيجا</span></div>
+                            <div class="text-2xl font-bold ${pkg.priceColor}">${pkg.price.split(' ')[0]} <span class="text-sm font-normal text-gray-400">ج.م / شهرياً</span></div>
+                        </div>
+                        <div class="my-4 text-xs font-bold text-gray-400 uppercase tracking-wider text-center bg-slate-950/40 py-1.5 rounded-lg border border-gray-800">
+                            مزايا متكاملة
+                        </div>
+                        <ul class="space-y-3 text-sm text-gray-300 mb-6">
+                            <li class="flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-phone ${pkg.priceColor} text-xs"></i> <span>الدقائق المحلية:</span></span>
+                                <span class="font-bold text-white">1000 دقيقة</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-comment-dots ${pkg.priceColor} text-xs"></i> <span>الرسائل:</span></span>
+                                <span class="font-bold text-white">50 رسالة (لكل الشبكات)</span>
+                            </li>
+                            <li class="flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-globe ${pkg.priceColor} text-xs"></i> <span>الدقائق الدولية:</span></span>
+                                <span class="font-bold text-white">10 دقائق</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button data-package="${pkg.name}" data-price="${pkg.price}" class="open-modal-btn w-full py-3 rounded-xl ${pkg.btnBg} text-white font-bold transition-colors duration-200 shadow-md flex items-center justify-center gap-2 cursor-pointer">
+                        <span>اشترك الآن</span>
+                        <i class="fa-solid fa-bolt text-xs"></i>
+                    </button>
+                </div>
+            `).join('');
+
             const modal = document.getElementById('subModal');
             const nameElem = document.getElementById('modalPackageName');
             const inputElem = document.getElementById('selectedPackageInput');
 
-            nameElem.textContent = `باقة ${packageName} - بسعر ${packagePrice}`;
-            inputElem.value = `باقة ${packageName} (${packagePrice})`;
-
-            modal.classList.remove('hidden');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('subModal');
-            modal.classList.add('hidden');
-        }
-
-        function handleSubscription(event) {
-            event.preventDefault();
-
-            const targetPhone = "201140877868";
-            const selectedPackage = document.getElementById('selectedPackageInput').value;
-            const name = document.getElementById('custName').value.trim();
-            const phone = document.getElementById('custPhone').value.trim();
-            const notes = document.getElementById('custNotes').value.trim();
-
-            let text = `مرحباً Net Zone ، أرغب في الاشتراك في الخدمة التالية:\n\n`;
-            text += `📌 *تفاصيل الطلب:*\n`;
-            text += `• *الباقة:* ${selectedPackage}\n`;
-            text += `• *الاسم:* ${name}\n`;
-            text += `• *رقم التواصل:* ${phone}\n`;
-            if (notes) {
-                text += `• *ملاحظات:* ${notes}\n`;
+            function openModal(packageName, packagePrice) {
+                nameElem.textContent = `باقة ${packageName} - بسعر ${packagePrice}`;
+                inputElem.value = `باقة ${packageName} (${packagePrice})`;
+                modal.classList.remove('hidden');
             }
 
-            const whatsappUrl = `https://wa.me/${targetPhone}?text=${encodeURIComponent(text)}`;
-            
-            closeModal();
-            document.getElementById('subscriptionForm').reset();
-            
-            window.open(whatsappUrl, '_blank');
-        }
+            function closeModal() {
+                modal.classList.add('hidden');
+            }
 
-        window.onclick = function(event) {
-            const modal = document.getElementById('subModal');
-            if (event.target === modal) {
+            document.querySelectorAll('.open-modal-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    openModal(btn.dataset.package, btn.dataset.price);
+                });
+            });
+
+            document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            };
+
+            function validateInputs() {
+                const name = document.getElementById('custName').value.trim();
+                const phone = document.getElementById('custPhone').value.trim();
+
+                if (!name) {
+                    alert('يرجى إدخال الاسم بالكامل');
+                    return false;
+                }
+                if (!phone || !/^[0-9]{11}$/.test(phone)) {
+                    alert('يرجى إدخال رقم هاتف صحيح مكون من 11 رقم');
+                    return false;
+                }
+                return true;
+            }
+
+            document.getElementById('whatsappBtn').addEventListener('click', () => {
+                if (!validateInputs()) return;
+
+                const selectedPackage = inputElem.value;
+                const name = document.getElementById('custName').value.trim();
+                const phone = document.getElementById('custPhone').value.trim();
+                const notes = document.getElementById('custNotes').value.trim();
+                const selectedPhone = document.querySelector('input[name="targetPhoneRadio"]:checked').value;
+
+                let text = `مرحباً Net Zone ، أرغب في تفعيل الخدمة التالية:\n\n`;
+                text += `📌 *تفاصيل الطلب:*\n`;
+                text += `• *الباقة:* ${selectedPackage}\n`;
+                text += `• *الاسم:* ${name}\n`;
+                text += `• *رقم الهاتف للتفعيل:* ${phone}\n`;
+                if (notes) {
+                    text += `• *ملاحظات إضافية:* ${notes}\n`;
+                }
+
+                const whatsappUrl = `https://wa.me/${selectedPhone}?text=${encodeURIComponent(text)}`;
                 closeModal();
-            }
-        }
+                document.getElementById('subscriptionForm').reset();
+                window.open(whatsappUrl, '_blank');
+            });
+
+            document.getElementById('gmailBtn').addEventListener('click', () => {
+                if (!validateInputs()) return;
+
+                const selectedPackage = inputElem.value;
+                const name = document.getElementById('custName').value.trim();
+                const phone = document.getElementById('custPhone').value.trim();
+                const notes = document.getElementById('custNotes').value.trim();
+
+                const subject = encodeURIComponent(`طلب تفعيل - ${selectedPackage}`);
+                let body = `مرحباً Net Zone،\n\nأرغب في تفعيل الخدمة التالية:\n\n`;
+                body += `الباقة: ${selectedPackage}\n`;
+                body += `الاسم: ${name}\n`;
+                body += `رقم الهاتف للتفعيل: ${phone}\n`;
+                if (notes) {
+                    body += `ملاحظات: ${notes}\n`;
+                }
+
+                const mailtoUrl = `mailto:${TARGET_EMAIL}?subject=${subject}&body=${encodeURIComponent(body)}`;
+                closeModal();
+                document.getElementById('subscriptionForm').reset();
+                window.location.href = mailtoUrl;
+            });
+        });
     </script>
 </body>
 </html>
